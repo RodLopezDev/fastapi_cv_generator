@@ -1,0 +1,59 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+@page: first {
+  size: A4;
+  margin: 64px;
+}
+
+body {
+  font-family: Proxima Nova, sans-serif;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.not-strong {
+  font-weight: normal;
+}
+
+.inline {
+  display: inline;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.spacer {
+  height: 8px;
+  display: block;
+}
+
+.text-lg {
+  font-size: 1.5rem;
+}
+
+.text-md {
+  font-size: 1.25rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.columns {
+  display: flex;
+  gap: 0px;
+}
+
+.column {
+  flex: 1;
+}

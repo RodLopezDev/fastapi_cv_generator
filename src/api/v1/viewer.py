@@ -3,13 +3,21 @@ This module contains the viewer API.
 """
 
 from fastapi import APIRouter
+from fastapi.responses import FileResponse
+import os
 
 router = APIRouter(tags=["Viewer"])
 
 
 @router.get("/{cv_id}")
-async def get_cv(cv_id: str):
+async def get_pdf(cv_id: str):
     """
-    Get a CV
+    Muestra el PDF generado
     """
-    return {"message": "CV built successfully"}
+    pdf_path = os.path.abspath("output/curriculum.pdf")
+    return FileResponse(
+        pdf_path,
+        media_type="application/pdf",
+        filename="curriculum.pdf",
+        headers={"Content-Disposition": f"inline; filename=curriculum.pdf"},
+    )

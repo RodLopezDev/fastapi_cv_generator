@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div style="width: 100%; display: grid; grid-template-columns: 2fr 3fr; align-items: top;">
+        <div>
+            <h1 class="strong text-lg">{{ name }}</h1>
+        </div>
+        <div style="text-align: right;">
+            <p class="text-sm">{{ phone }}</p>
+            <p class="text-sm">{{ email }}</p>
+            <p class="text-sm">{{ github }}</p>
+            <p class="text-sm">{{ linkedin }}</p>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+
+    <div style="height: 1px; background-color: gray;"></div>
+
+    <div class="spacer"></div>
+
+    <p class="text-xs" style="text-align: justify;">
+        Software Engineer con más de 8 años de experiencia en el diseño e implementación de arquitecturas escalables de
+        microservicios en entornos de nube (GCP, AWS). Experiencia demostrada en integraciones de sistemas con
+        plataformas de comercio electrónico, desarrollo basado en arquitecturas dirigidas por eventos y automatización
+        de flujos de trabajo de datos. Experto en NestJS/TypeScript y Python/FastAPI/Lambda, con experiencia adicional
+        en Java y .NET. Además de experiencia construyendo soluciones e2e con desarrollo en frontend ofrece soluciones
+        de alto impacto en los sectores de tecnología financiera, logística, tecnología sanitaria y comercio minorista.
+    </p>
+
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+
+    <h2 class="text-md">{{ metadata.title_experience }}</h2>
+
+    <div class="spacer"></div>
+
+    {% for experience in experiences %}
+
+    <!-- Componente de experiencia -->
+    <h3 class="text-sm not-strong">
+        <p class="strong inline">IIAP, Software Engineer (Short Term Project)</p> — FEB 2025 – Actualidad
+    </h3>
+    <ul style="padding-left: 16px;">
+
+        {% for description in experience.descriptions %}
+        <li class="text-xs justify">
+            {{ description }}
+        </li>
+        {% endfor %}
+
+        <li class="text-xs justify">
+            <p class="strong inline">Stack:</p>
+            {% for stack in experience.stack %}
+            {{ stack }}{% if not loop.last %}, {% else %}.{% endif %}
+            {% endfor %}
+        </li>
+    </ul>
+    <!-- Componente de experiencia -->
+
+    <div class="spacer"></div>
+
+    {% endfor %}
+
+    <div class="spacer"></div>
+
+    <h2 class="text-md">{{ metadata.title_projects }}</h2>
+
+    <div class="spacer"></div>
+
+    <ul style="padding-left: 16px;">
+        {% for project in projects %}
+        <li class="text-xs">
+            <p class="strong inline">{{ project.name }}: </p>{% if project.link %} ({{ project.link }}){% endif %}
+            {{ project.description }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+
+    <h2 class="text-md">{{ metadata.title_education }}</h2>
+
+    <div class="spacer"></div>
+
+    {% for education in education %}
+    <div class="text-xs">
+        <div>
+            <p class="strong inline">{{ education.name }}</p> – {{ education.mode }}
+        </div>
+        <div>{{ education.university }}, {{ education.year_start }} - {{ education.year_end }}</div>
+    </div>
+    <div class="spacer"></div>
+    {% endfor %}
+</body>
+
+</html>
