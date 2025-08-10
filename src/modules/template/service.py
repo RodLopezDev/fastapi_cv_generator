@@ -31,6 +31,7 @@ def get_html_content(dto: CurriculumDTO) -> str:
         "phone": dto.personal_info.phone,
         "github": dto.personal_info.github,
         "linkedin": dto.personal_info.linkedin,
+        "resume": dto.personal_info.resume,
         "experiences": dto.experiences,
         "projects": dto.projects,
         "education": dto.education,

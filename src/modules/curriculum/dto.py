@@ -27,6 +27,7 @@ class PersonalInfoDTO(BaseModel):
     phone: str
     github: str
     linkedin: str
+    resume: str
 
 
 class MetadataDTO(BaseModel):
