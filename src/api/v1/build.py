@@ -22,7 +22,7 @@ async def build(dto: CurriculumDTO):
     if success:
         return {
             "message": "CV built successfully",
-            "url": f"/v1/viewer/{dto.metadata.identifier}",
+            "url": f"/v1/viewer/cv/{dto.metadata.identifier}",
         }
 
     return {"message": "Error building CV"}
