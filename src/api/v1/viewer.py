@@ -2,9 +2,10 @@
 This module contains the viewer API.
 """
 
+import os
+
 from fastapi import APIRouter
 from fastapi.responses import FileResponse
-import os
 
 router = APIRouter(tags=["Viewer"])
 
@@ -14,7 +15,7 @@ async def get_pdf(cv_id: str):
     """
     Muestra el PDF generado
     """
-    pdf_path = os.path.abspath("output/curriculum.pdf")
+    pdf_path = os.path.abspath(f"output/{cv_id}.pdf")
     return FileResponse(
         pdf_path,
         media_type="application/pdf",

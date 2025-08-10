@@ -4,7 +4,6 @@ This module contains the main entry point for the application.
 
 from core.config import AppConfig
 
-
 if __name__ == "__main__":
     import uvicorn
 
