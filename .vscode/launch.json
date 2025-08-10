@@ -1,0 +1,13 @@
+{
+  "configurations": [
+    {
+      "name": "CV Generator - Python",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/main.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/venv/bin/python"
+    }
+  ]
+}

@@ -3,14 +3,15 @@ This module contains the main app for the API.
 """
 
 from fastapi import FastAPI
+
 from app.config import AppConfig
 
 APP_VERSION = "1.0.0"
 
 
 app = FastAPI(
-    title="Rodrigo López Dev",
-    description="Base handler for the API",
+    title="CV Generator",
+    description="CV Generator",
     version=APP_VERSION,
     docs_url=None if AppConfig.PRODUCTION else "/docs",
     redoc_url=None if AppConfig.PRODUCTION else "/redoc",
