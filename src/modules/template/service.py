@@ -37,12 +37,16 @@ def get_html_content(dto: CurriculumDTO) -> str:
         "education": dto.education,
     }
 
-    env = Environment(loader=FileSystemLoader("src/modules/template/templates/base"))
+    template = "base"
+    template_path = f"src/modules/template/templates/{template}"
+    css_path = f"src/modules/template/templates/{template}/index.css"
+
+    env = Environment(loader=FileSystemLoader(template_path))
     template = env.get_template("index.html")
     html_content = template.render(data)
 
     css_content = open(
-        file="src/modules/template/templates/base/index.css",
+        file=css_path,
         mode="r",
         encoding="utf-8",
     ).read()
