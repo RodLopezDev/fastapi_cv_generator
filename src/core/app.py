@@ -4,7 +4,8 @@ This module contains the main app for the API.
 
 from fastapi import FastAPI
 
-from app.config import AppConfig
+from api.v1 import build, viewer
+from core.config import AppConfig
 
 APP_VERSION = "1.0.0"
 
@@ -16,6 +17,10 @@ app = FastAPI(
     docs_url=None if AppConfig.PRODUCTION else "/docs",
     redoc_url=None if AppConfig.PRODUCTION else "/redoc",
 )
+
+
+app.include_router(build.router, prefix="/v1/build")
+app.include_router(viewer.router, prefix="/v1/viewer")
 
 
 @app.get("/", tags=["Health Check"])
