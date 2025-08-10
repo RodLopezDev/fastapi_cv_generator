@@ -20,6 +20,9 @@ async def build(dto: CurriculumDTO):
     success = string_to_pdf(html_content, dto.metadata.identifier or "curriculum")
 
     if success:
-        return {"message": "CV built successfully"}
+        return {
+            "message": "CV built successfully",
+            "url": f"/v1/viewer/{dto.metadata.identifier}",
+        }
 
     return {"message": "Error building CV"}
