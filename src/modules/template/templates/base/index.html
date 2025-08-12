@@ -6,11 +6,11 @@
 </head>
 
 <body>
-    <div style="width: 100%; display: grid; grid-template-columns: 2fr 3fr; align-items: top;">
+    <div class="header-cols">
         <div>
             <h1 class="strong text-lg">{{ name }}</h1>
         </div>
-        <div style="text-align: right;">
+        <div class="right">
             <p class="text-xs">{{ phone }}</p>
             <p class="text-xs">{{ email }}</p>
             <p class="text-xs">{{ github }}</p>
@@ -20,12 +20,12 @@
 
     <div class="spacer"></div>
 
-    <div style="height: 1px; background-color: gray;"></div>
+    <div class="separator"></div>
 
     <div class="spacer"></div>
     <div class="spacer"></div>
 
-    <p class="text-xs" style="text-align: justify;">
+    <p class="text-xs justity">
         {{ resume }}
     </p>
 

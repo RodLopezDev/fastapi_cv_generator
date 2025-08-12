@@ -80,3 +80,23 @@ body {
 .column {
   flex: 1;
 }
+
+.header-cols {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: top;
+}
+
+.justity {
+  text-align: justify;
+}
+
+.right {
+  text-align: right;
+}
+
+.separator {
+  height: 1px;
+  background-color: gray;
+}
