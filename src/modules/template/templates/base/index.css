@@ -1,15 +1,37 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
 @page: first {
   size: A4;
   margin: 64px;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat/staic/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat/staic/Montserrat-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat/staic/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Montserrat";
+}
+
 body {
-  font-family: Proxima Nova, sans-serif;
+  font-family: "Montserrat";
   line-height: 1.2;
 }
 
