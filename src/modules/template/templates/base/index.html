@@ -60,6 +60,10 @@
     </ul>
     <!-- Componente de experiencia -->
 
+    {% if experience.html_props %}
+    <div style="margin-bottom: {{ experience.html_props.margin_bottom }}px"></div>
+    {% endif %}
+
     <div class="spacer"></div>
 
     {% endfor %}

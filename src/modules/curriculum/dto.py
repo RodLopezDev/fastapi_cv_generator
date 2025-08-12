@@ -8,6 +8,10 @@ from typing import Optional
 from pydantic import BaseModel, Field
 
 
+class HTMLProps(BaseModel):
+    margin_bottom: int = Field(default=0)
+
+
 class Laguage(StrEnum):
     """
     Language Enum
@@ -50,6 +54,7 @@ class ExperienceDTO(BaseModel):
     year_end: str
     descriptions: list[str] = Field(default_factory=list)
     stack: list[str] = Field(default_factory=list)
+    html_props: Optional[HTMLProps] = None
 
 
 class ProjectDTO(BaseModel):
