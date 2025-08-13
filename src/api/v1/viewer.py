@@ -17,7 +17,8 @@ async def get_all():
     """
     pdf_files = [f for f in os.listdir("output") if f.endswith(".pdf")]
     return [
-        {"name": f.replace(".pdf", ""), "url": f"/v1/viewer/cv/{f}"} for f in pdf_files
+        {"name": f.replace(".pdf", ""), "url": f"/v1/viewer/cv/{f.replace(".pdf", "")}"}
+        for f in pdf_files
     ]
 
 
